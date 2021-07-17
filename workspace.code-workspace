@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "standalone-app"
+		},
+		{
+			"path": "default-app"
+		}
+	],
+	"settings": {}
+}
