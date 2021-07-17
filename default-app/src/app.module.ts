@@ -5,6 +5,8 @@ import { AppService } from './app.service';
 import { UserAgentMiddleware } from './config/middlewares/user-agent.middleware';
 
 import morgan from 'morgan';
+import responseTime from 'response-time';
+console.log(responseTime);
 
 @Module({
   imports: [],
@@ -13,7 +15,8 @@ import morgan from 'morgan';
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
-    consumer.apply(morgan('combined')).forRoutes('*');
-    consumer.apply(UserAgentMiddleware).forRoutes('*');
+    // consumer.apply(morgan('combined')).forRoutes('*');
+    // consumer.apply(UserAgentMiddleware).forRoutes('*');
+    consumer.apply(responseTime()).forRoutes('*');
   }
 }
